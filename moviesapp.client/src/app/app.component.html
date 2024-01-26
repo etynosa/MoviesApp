@@ -2,7 +2,7 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+<!-- <p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 
 <table *ngIf="forecasts">
     <thead>
@@ -19,6 +19,66 @@
             <td>{{ forecast.temperatureC }}</td>
             <td>{{ forecast.temperatureF }}</td>
             <td>{{ forecast.summary }}</td>
+        </tr>
+    </tbody>
+</table> -->
+<div class="grid">
+	<div class="col-12">
+		<div class="card">
+			<h5>DataView</h5>
+			<p-dataView #dv [value]="movies" [paginator]="true" [rows]="9" filterBy="title" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+				
+
+				<ng-template let-products pTemplate="listItem">
+					<div class="col-12" *ngFor="let movie of movies">
+						<div class="flex flex-column md:flex-row align-items-center p-3 w-full">
+							<img [src]="movie.photourl" [alt]="movie.title" class="my-4 md:my-0 w-9 md:w-10rem shadow-2 mr-5"/>
+							<div class="flex-1 flex flex-column align-items-center text-center md:text-left">
+								<div class="font-bold text-2xl">{{movie.title}}</div>
+								<div class="mb-2">{{movie.description}}</div>
+								<p-rating [ngModel]="movie.rating" [readonly]="true" [cancel]="false" styleClass="mb-2"></p-rating>
+								<div class="flex align-items-center mt-2">
+									<i class="pi pi-tag mr-2"></i>
+									<span class="font-semibold">{{movie.releaseDate}}</span>
+								</div>
+							</div>
+							<div class="flex flex-row md:flex-column justify-content-between w-full md:w-auto align-items-center md:align-items-end mt-5 md:mt-0">
+								<span class="text-2xl font-semibold mb-2 align-self-center md:align-self-end">${{movie.ticketPrice}}</span>
+								<p-button icon="pi pi-shopping-cart" label="Edit Movie" [disabled]="movie.prrice === 0" styleClass="mb-2 p-button-sm"></p-button>
+								<span [class]="'movie-badge status-' + movie.director.toLowerCase()">{{movie.director}}</span>
+							</div>
+						</div>
+					</div>
+				</ng-template>
+
+			</p-dataView>
+		</div>
+	</div>
+
+	
+	
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Movie Name</th>
+            <th>Release Date</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>{{ movie.id }}</td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.releaseDate }}</td>
+            <td>{{ movie.genre }}</td>
+            <td>{{ movie.price }}</td>
+            <td>{{ movie.rating }}</td>
         </tr>
     </tbody>
 </table>

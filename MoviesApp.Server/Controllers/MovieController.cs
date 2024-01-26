@@ -8,7 +8,7 @@ using MoviesApp.Server.Service.Interface;
 
 namespace MoviesApp.Server.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/movies")]
     [ApiController]
     public class MovieController(IMovieService movieService) : ControllerBase
     {
