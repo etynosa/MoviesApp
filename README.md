@@ -35,16 +35,7 @@ Follow these instructions to set up and run the project locally.
         dotnet run --project MovieApi
         ```
 
-    - **Production Configuration**: Run the following commands:
-
-        ```bash
-        cd MovieServer
-        dotnet publish -c Release -o out
-        cd out
-        dotnet MovieApi.dll
-        ```
-
-3. The API should now be running locally. Open a web browser and navigate to `https://localhost:5001/api/movies` to verify.
+3. The API should now be running locally. Open a web browser and navigate to `https://localhost:7405/api/movies/all` to verify.
 
 ### Running the Angular Client
 
