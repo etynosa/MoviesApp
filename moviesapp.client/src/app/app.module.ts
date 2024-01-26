@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieComponent } from './movies/movie/movie.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
@@ -13,11 +12,11 @@ import { OrderListModule } from 'primeng/orderlist';
 import { InputTextModule } from 'primeng/inputtext';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
+import { Table } from 'primeng/table';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    
+    AppComponent,   
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -29,7 +28,7 @@ import { ButtonModule } from 'primeng/button';
 		OrderListModule,
 		InputTextModule,
 		RatingModule,
-		ButtonModule
+		ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

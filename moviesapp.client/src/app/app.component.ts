@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   public movies: Movie[] = [];
   sortOrder: number = 0;
   sortOptions: SelectItem[] = [];
+  public genres: any[] = [];
 
 
   sortField: string = '';
@@ -47,6 +48,8 @@ export class AppComponent implements OnInit {
     this.http.get<APIResponse>('https://localhost:7045/api/v1/Movie/all').subscribe(
       (result) => {
         this.movies = result.data
+        this.genres = this.movies.map((item) => item.genre).flat();
+        console.log(this.movies);
       },
       (error) => {
         console.error("i am logging", error);
