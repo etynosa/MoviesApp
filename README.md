@@ -2,7 +2,7 @@ Below is a sample README file outlining the steps to run a .NET Web API project 
 
 ---
 
-# MovieApi - .NET Web API with Angular Client
+# MoviesApp - .NET Web API with Angular Client
 
 This project consists of a .NET Core Web API for managing movies and an Angular client for interacting with the API. The Web API includes CRUD endpoints for movies, filtering, pagination, sorting, and validation. The Angular client provides a user-friendly interface for interacting with the API.
 
