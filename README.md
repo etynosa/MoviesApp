@@ -1,4 +1,3 @@
-Below is a sample README file outlining the steps to run a .NET Web API project with multiple startup configurations (for development and production) along with an Angular client.
 
 ---
 
